@@ -6,6 +6,10 @@
     <File Path=".github/workflows/build-and-test.yml" />
     <File Path=".github/workflows/publish-package.yml" />
   </Folder>
-  <Project Path="src/Soenneker.Nws.OpenApiClientUtil/Soenneker.Nws.OpenApiClientUtil.csproj" />
-  <Project Path="test/Soenneker.Nws.OpenApiClientUtil.Tests/Soenneker.Nws.OpenApiClientUtil.Tests.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/Soenneker.Nws.OpenApiClientUtil/Soenneker.Nws.OpenApiClientUtil.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Soenneker.Nws.OpenApiClientUtil.Tests/Soenneker.Nws.OpenApiClientUtil.Tests.csproj" />
+  </Folder>
 </Solution>
