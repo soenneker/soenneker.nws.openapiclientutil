@@ -1,20 +1,19 @@
 using Soenneker.Nws.OpenApiClientUtil.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Nws.OpenApiClientUtil.Tests;
 
-[Collection("Collection")]
-public sealed class NwsOpenApiClientUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class NwsOpenApiClientUtilTests : HostedUnitTest
 {
     private readonly INwsOpenApiClientUtil _openapiclientutil;
 
-    public NwsOpenApiClientUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public NwsOpenApiClientUtilTests(Host host) : base(host)
     {
         _openapiclientutil = Resolve<INwsOpenApiClientUtil>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
