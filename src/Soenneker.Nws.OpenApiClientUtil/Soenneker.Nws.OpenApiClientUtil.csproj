@@ -44,6 +44,6 @@
         <PackageReference Include="Soenneker.Kiota.NoOpAuthenticationProvider" Version="4.0.36" />
         <PackageReference Include="Soenneker.Nws.HttpClients" Version="4.0.17" />
         <PackageReference Include="Soenneker.Nws.OpenApiClient" Version="4.0.20" />
-        <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="4.0.785" />
+        <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="4.0.788" />
     </ItemGroup>
 </Project>
