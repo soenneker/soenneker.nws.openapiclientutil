@@ -10,5 +10,10 @@ namespace Soenneker.Nws.OpenApiClientUtil.Abstract;
 /// </summary>
 public interface INwsOpenApiClientUtil: IDisposable, IAsyncDisposable
 {
+    /// <summary>
+    /// Gets the value.
+    /// </summary>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task containing the result of the operation.</returns>
     ValueTask<NwsOpenApiClient> Get(CancellationToken cancellationToken = default);
 }
