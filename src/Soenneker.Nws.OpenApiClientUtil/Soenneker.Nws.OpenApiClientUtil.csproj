@@ -42,7 +42,7 @@
 
     <ItemGroup>
         <PackageReference Include="Soenneker.Kiota.NoOpAuthenticationProvider" Version="4.0.43" />
-        <PackageReference Include="Soenneker.Nws.HttpClients" Version="4.0.78" />
+        <PackageReference Include="Soenneker.Nws.HttpClients" Version="4.0.79" />
         <PackageReference Include="Soenneker.Nws.OpenApiClient" Version="4.0.46" />
         <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="4.0.817" />
     </ItemGroup>
