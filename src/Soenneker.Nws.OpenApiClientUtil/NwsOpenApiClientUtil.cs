@@ -1,17 +1,16 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 using Soenneker.Extensions.ValueTask;
 using Soenneker.Nws.OpenApiClientUtil.Abstract;
-using Soenneker.Kiota.NoOpAuthenticationProvider;
 using Soenneker.Nws.HttpClients.Abstract;
 using Soenneker.Nws.OpenApiClient;
 using Soenneker.Utils.AsyncSingleton;
 
 namespace Soenneker.Nws.OpenApiClientUtil;
 
-///<inheritdoc cref="INwsOpenApiClientUtil"/>
 public sealed class NwsOpenApiClientUtil : INwsOpenApiClientUtil
 {
     private readonly AsyncSingleton<NwsOpenApiClient> _client;
@@ -23,7 +22,7 @@ public sealed class NwsOpenApiClientUtil : INwsOpenApiClientUtil
             HttpClient httpClient = await httpClientUtil.Get(token)
                                                         .NoSync();
             
-            var requestAdapter = new HttpClientRequestAdapter(new NoOpAuthenticationProvider(), httpClient: httpClient);
+            var requestAdapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider(), httpClient: httpClient);
 
             return new NwsOpenApiClient(requestAdapter);
         });
@@ -34,18 +33,11 @@ public sealed class NwsOpenApiClientUtil : INwsOpenApiClientUtil
         return _client.Get(cancellationToken);
     }
 
-    /// <summary>
-    /// Releases resources used by the current instance.
-    /// </summary>
     public void Dispose()
     {
         _client.Dispose();
     }
 
-    /// <summary>
-    /// Asynchronously releases resources used by the current instance.
-    /// </summary>
-    /// <returns>A task that represents the asynchronous operation.</returns>
     public ValueTask DisposeAsync()
     {
         return _client.DisposeAsync();

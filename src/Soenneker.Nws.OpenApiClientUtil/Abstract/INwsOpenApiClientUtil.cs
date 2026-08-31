@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 namespace Soenneker.Nws.OpenApiClientUtil.Abstract;
 
 /// <summary>
-/// A .NET thread-safe singleton HttpClient for 
+/// Provides a cached National Weather Service client backed by the configured HTTP provider.
 /// </summary>
-public interface INwsOpenApiClientUtil: IDisposable, IAsyncDisposable
+public interface INwsOpenApiClientUtil : IDisposable, IAsyncDisposable
 {
     /// <summary>
-    /// Gets the value.
+    /// Gets the cached National Weather Service client, creating it on the first call.
     /// </summary>
     /// <param name="cancellationToken">The cancellation token.</param>
-    /// <returns>A task containing the result of the operation.</returns>
+    /// <returns>The configured client.</returns>
     ValueTask<NwsOpenApiClient> Get(CancellationToken cancellationToken = default);
 }

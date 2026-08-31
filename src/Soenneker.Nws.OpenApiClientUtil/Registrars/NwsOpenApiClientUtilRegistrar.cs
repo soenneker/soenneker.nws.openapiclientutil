@@ -6,7 +6,7 @@ using Soenneker.Nws.OpenApiClientUtil.Abstract;
 namespace Soenneker.Nws.OpenApiClientUtil.Registrars;
 
 /// <summary>
-/// A .NET thread-safe singleton HttpClient for GitHub
+/// Registers the National Weather Service generated-client provider.
 /// </summary>
 public static class NwsOpenApiClientUtilRegistrar
 {
