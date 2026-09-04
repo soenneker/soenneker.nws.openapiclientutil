@@ -11,6 +11,7 @@ using Soenneker.Utils.AsyncSingleton;
 
 namespace Soenneker.Nws.OpenApiClientUtil;
 
+/// <inheritdoc cref="INwsOpenApiClientUtil" />
 public sealed class NwsOpenApiClientUtil : INwsOpenApiClientUtil
 {
     private readonly AsyncSingleton<NwsOpenApiClient> _client;
